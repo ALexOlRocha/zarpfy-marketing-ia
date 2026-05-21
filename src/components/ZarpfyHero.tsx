@@ -112,6 +112,19 @@ export function ZarpfyHero() {
     };
   }, []);
 
+  const handleNavClick = (id: string) => {
+    setMenuOpen(false);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // optional: move focus for accessibility
+      (el as HTMLElement).focus?.();
+    } else {
+      // fallback: update hash
+      window.location.hash = id;
+    }
+  };
+
   return (
     <>
       <nav className="navbar">
@@ -133,13 +146,37 @@ export function ZarpfyHero() {
         <div className={`nav-menu ${menuOpen ? "active" : ""}`}>
           <ul className="nav-links">
             <li>
-              <a href="#como-funciona">Método</a>
+              <a
+                href="#como-funciona"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("como-funciona");
+                }}
+              >
+                Método
+              </a>
             </li>
             <li>
-              <a href="#funcionalidades">Funcionalidades</a>
+              <a
+                href="#funcionalidades"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("funcionalidades");
+                }}
+              >
+                Funcionalidades
+              </a>
             </li>
             <li>
-              <a href="#contato">Contato</a>
+              <a
+                href="#contato"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("contato");
+                }}
+              >
+                Contato
+              </a>
             </li>
           </ul>
           <div className="nav-actions">

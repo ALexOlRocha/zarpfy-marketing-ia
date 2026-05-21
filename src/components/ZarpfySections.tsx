@@ -35,7 +35,7 @@ export function ZarpfySections() {
    ============================================================ */
 function BentoSection() {
   return (
-    <section className="zbento">
+    <section className="zbento" id="como-funciona">
       <div className="zbento-head">
         <div>
           <h2 className="zbento-title">
@@ -207,7 +207,7 @@ function MarqueeRow({
    ============================================================ */
 function CoreFeatures() {
   return (
-    <section className="zcore">
+    <section className="zcore" id="funcionalidades">
       <div className="zcore-head">
         <div className="zcore-badge">RECURSOS PRINCIPAIS</div>
         <h2 className="zcore-title">Construído para vender mais rápido</h2>
@@ -321,7 +321,7 @@ function CtaFaqFooter() {
               alert("Inscrição recebida!");
             }}
           >
-            <input type="email" required placeholder="seu@email.com" />
+            <input id="contato" type="email" required placeholder="seu@email.com" />
             <button type="submit">Quero acesso</button>
           </form>
         </div>
